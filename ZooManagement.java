@@ -11,7 +11,7 @@ Animal zebra = new Animal("mammal", "zebra", 5, true);
 
 Zoo myzoo = new Zoo("zoopark", 10, "paris");
 
-myzoo.animals = new Animal[myzoo.nbrCages];
+myzoo.animals = new Animal[Zoo.NUMBER_OF_CAGES];
 myzoo.animals[0] = lion;
 
     System.out.println(myzoo.addAnimal(lion));      
@@ -45,7 +45,7 @@ System.out.println(myzoo);
     System.out.println("\nBefore removal:");
     myzoo1.displayAnimals();
     
-    // Test removal
+    
     myzoo1.removeAnimal(elephant);
     
     System.out.println("\nAfter removal:");
@@ -54,6 +54,21 @@ System.out.println(myzoo);
     
     Animal tiger = new Animal("Feline", "Tiger", 4, true);
     myzoo1.removeAnimal(tiger);
+
+    Zoo myzoo2 = new Zoo("Wildlife Park", 5, "Paris");
+    
+    
+    for(int i = 0; i < Zoo.NUMBER_OF_CAGES + 1; i++) {
+        Animal animal = new Animal("Family" + i, "Animal" + i, i, true);
+        System.out.println("zoo2 is full: " + myzoo2.isZooFull());
+        myzoo2.addAnimal(animal);
+    }
+    
+    
+    System.out.println("Final state - zoo2 is full: " + myzoo2.isZooFull());
+
+    Zoo Zooplusgrand = Zoo.comparerZoo(myzoo1, myzoo2);
+    System.out.println("Zoo with more animals: " + Zooplusgrand.name);
 }
 }
 
