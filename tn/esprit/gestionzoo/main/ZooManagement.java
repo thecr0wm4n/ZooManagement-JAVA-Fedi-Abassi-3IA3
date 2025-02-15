@@ -1,3 +1,8 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -11,8 +16,8 @@ Animal zebra = new Animal("mammal", "zebra", 5, true);
 
 Zoo myzoo = new Zoo("zoopark", 10, "paris");
 
-myzoo.animals = new Animal[Zoo.NUMBER_OF_CAGES];
-myzoo.animals[0] = lion;
+//myzoo.animals = new Animal[Zoo.NUMBER_OF_CAGES];
+//myzoo.animals[0] = lion;
 
     System.out.println(myzoo.addAnimal(lion));      
     System.out.println(myzoo.addAnimal(elephant));  
@@ -68,7 +73,7 @@ System.out.println(myzoo);
     System.out.println("Final state - zoo2 is full: " + myzoo2.isZooFull());
 
     Zoo Zooplusgrand = Zoo.comparerZoo(myzoo1, myzoo2);
-    System.out.println("Zoo with more animals: " + Zooplusgrand.name);
+    System.out.println("Zoo with more animals: " + Zooplusgrand.getName());
 }
 }
 
