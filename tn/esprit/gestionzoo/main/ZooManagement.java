@@ -1,6 +1,10 @@
 package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+import tn.esprit.gestionzoo.entities.Terrestrial;
 import tn.esprit.gestionzoo.entities.Zoo;
 
 import java.util.Scanner;
@@ -74,6 +78,27 @@ System.out.println(myzoo);
 
     Zoo Zooplusgrand = Zoo.comparerZoo(myzoo1, myzoo2);
     System.out.println("Zoo with more animals: " + Zooplusgrand.getName());
+
+
+    Aquatic aquatic = new Aquatic();
+    Terrestrial terrestrial = new Terrestrial();
+    Dolphin dolphin = new Dolphin();
+    Penguin penguin = new Penguin();
+    
+    // Create instances using parameterized constructors
+    Aquatic aquatic2 = new Aquatic("Fish", "Generic Fish", 1, false, "Ocean");
+    Terrestrial terrestrial2 = new Terrestrial("Mammal", "Lion", 5, true, "Forest");
+    Dolphin dolphin2 = new Dolphin("Mammal", "Flipper", 10, true, "Ocean", 37.5f);
+    Penguin penguin2 = new Penguin("Bird", "Pingu", 3, false, "Antarctica", 100.0f);
+
+    System.out.println(aquatic2);
+    System.out.println(terrestrial2);
+    System.out.println(dolphin2);
+    System.out.println(penguin2);
+
+    aquatic2.swim();
+    dolphin2.swim();
+    penguin2.swim();
 }
 }
 
