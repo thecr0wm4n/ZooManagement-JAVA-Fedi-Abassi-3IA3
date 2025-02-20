@@ -79,26 +79,47 @@ System.out.println(myzoo);
     Zoo Zooplusgrand = Zoo.comparerZoo(myzoo1, myzoo2);
     System.out.println("Zoo with more animals: " + Zooplusgrand.getName());
 
+    Zoo zoo = new Zoo("Aqua Zoo",6, "Miami");
 
-    Aquatic aquatic = new Aquatic();
-    Terrestrial terrestrial = new Terrestrial();
-    Dolphin dolphin = new Dolphin();
-    Penguin penguin = new Penguin();
     
-    // Create instances using parameterized constructors
-    Aquatic aquatic2 = new Aquatic("Fish", "Generic Fish", 1, false, "Ocean");
+    Terrestrial terrestrial = new Terrestrial();
+    Dolphin dolphin = new Dolphin("Mammal", "Flipper", 10, true, "Ocean", 37.5f);
+    Penguin penguin = new Penguin("Bird", "Pingu", 3, false, "Antarctica", 100.0f);
+    
+
+    zoo.addAquaticAnimal(dolphin);
+    zoo.addAquaticAnimal(penguin);
+    
+
+    zoo.displaySwimmingAnimals();
+    
+    
+    
     Terrestrial terrestrial2 = new Terrestrial("Mammal", "Lion", 5, true, "Forest");
     Dolphin dolphin2 = new Dolphin("Mammal", "Flipper", 10, true, "Ocean", 37.5f);
     Penguin penguin2 = new Penguin("Bird", "Pingu", 3, false, "Antarctica", 100.0f);
 
-    System.out.println(aquatic2);
+    
     System.out.println(terrestrial2);
     System.out.println(dolphin2);
     System.out.println(penguin2);
 
-    aquatic2.swim();
+    
     dolphin2.swim();
     penguin2.swim();
+
+    Penguin penguin3 = new Penguin("Bird", "Pingu", 3, false, "Antarctica", 100.0f);
+    Penguin penguin4 = new Penguin("Bird", "Pingu", 3, false, "Antarctica", 100.0f);
+    
+    zoo.addAquaticAnimal(penguin3);
+    zoo.addAquaticAnimal(penguin4);
+
+    System.out.println("Max penguin swimming depth: " + zoo.maxPenguinSwimmingDepth());
+
+    zoo.displayNumberOfAquaticsByType();
+
+    System.out.println("Are dolphins equal? " + dolphin2.equals(dolphin));  
+    System.out.println("Are dolphin and penguin equal? " + dolphin2.equals(penguin2));  
 }
 }
 
