@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.utils.InvalidAgeException;
+
 public class Penguin extends Aquatic {
     protected float swimmingDepth;
     
@@ -12,10 +14,11 @@ public class Penguin extends Aquatic {
         return swimmingDepth;
     }
     
-    public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) {
-        super(family, name, age, isMammal, habitat);
-        this.swimmingDepth = swimmingDepth;
-    }
+   public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) throws InvalidAgeException {
+    super(family, name, age, isMammal, habitat);
+    this.swimmingDepth = swimmingDepth;
+}
+
 
     @Override
     public String toString() {
